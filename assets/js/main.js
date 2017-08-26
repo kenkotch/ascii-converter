@@ -5,6 +5,9 @@ $(function() {
   // upload image button
   $('button').click(function(event) {
     event.preventDefault()
+    // clear previous image
+    $('#newImage').empty()
+
     // create object
     client.pick({
       accept: 'image/*',
@@ -22,7 +25,7 @@ $(function() {
         type: "get",
         success: function(response) {
           response = response.slice(53, -14)
-          response = response.replace(/12px/, '10%')
+          response = response.replace(/font-size: 12px;/, '')
           console.log(response);
           $('#newImage').append(response)
         }
