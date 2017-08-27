@@ -19,16 +19,17 @@ $(function() {
 
       //url of uploaded image
       let myURL = result.filesUploaded[0].url
+      let color = 'colored:true,reverse:true'
       // make ascii art!
       $.ajax({
-        url: 'https://process.filestackapi.com/AHP1HMkJhTJWHb1boecTAz/ascii=colored:true,background:black,reverse:true/' + myURL,
+        url: 'https://process.filestackapi.com/AHP1HMkJhTJWHb1boecTAz/ascii=' + color + '/' + myURL,
         type: "get",
         success: function(response) {
-          // remove html, head, body from returned html. remove font
-          response = response.slice(53, -14).replace(/font-size: 12px;/, '')
+          // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
+          response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
+          // $('div.fsp-modal').removeClass(".fsp-picker__footer")  //this isnt working
           console.log(response);
           $('#newImage').append(response).show()
-            .attr('#red', 'newID')
         }
       })
       // [{"filename":"Shahada_Deshiya.jpg","handle":"xq7jrczoRlmiqbYfA8bK","mimetype":"image/jpeg","originalPath":"http://ken.uno/images/Shahada_Deshiya.jpg","size":6131189,"source":"url","url":"https://cdn.filestackcontent.com/xq7jrczoRlmiqbYfA8bK"}]
@@ -43,8 +44,8 @@ $(function() {
     console.log(bgBtn)
     bgBtn.removeClass("red orange yellow green blue indigo violet black white rainbow")
     bgBtn.addClass(currentColor[1])
-    $("div.newImage").removeClass("red orange yellow green blue indigo violet black white rainbow")
-    $("div.newImage").addClass(currentColor[1])
+    $("pre").removeClass("red orange yellow green blue indigo violet black white rainbow")
+    $("pre").addClass(currentColor[1])
   })
 })
 
