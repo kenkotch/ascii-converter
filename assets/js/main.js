@@ -27,8 +27,7 @@ $(function() {
         success: function(response) {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
           response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
-          // $('div.fsp-modal').removeClass(".fsp-picker__footer")  //this isnt working
-          console.log(response);
+          console.log(color);
           $('#newImage').append(response).show()
         }
       })
@@ -47,6 +46,22 @@ $(function() {
     $("pre").removeClass("red orange yellow green blue indigo violet black white rainbow")
     $("pre").addClass(currentColor[1])
   })
+
+  // ascii color/bw switch
+  $("[name='colorToggle']").bootstrapSwitch()
+
+
+
+
+
+
 })
 
-// })
+
+
+
+
+// not working! want to remove picker logos
+// $('div.fsp-modal').parent().removeClass("fsp-picker__footer fsp-picker__footer--visible")
+// $('.fsp-icon--filestack').remove()
+// $('fsp-picker__footer--').replace(/visible/g, 'hidden')
