@@ -15,15 +15,10 @@ pre {
   font-family: Consolas, monaco, monospace;
   font-size: .7vw;
   text-align: center;
-  /*float: left;*/
+  max-height: 80vh;
   max-width: 60vw;
   display: none;
 }
-
-.container {
-  border: 2px solid black;
-}
-
 
 /*
 =================================

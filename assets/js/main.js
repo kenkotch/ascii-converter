@@ -7,7 +7,7 @@ $(function() {
     event.preventDefault()
     // clear previous image
     $('#newImage').empty()
-
+    $('#wrapper').removeClass('toggled')
     // create object
     client.pick({
       accept: 'image/*',
@@ -48,7 +48,7 @@ $(function() {
   })
 
   // ascii color/bw switch
-  $("[name='colorToggle']").bootstrapSwitch()
+  // $().button('toggle')
 
 
 
