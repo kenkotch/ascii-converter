@@ -1,18 +1,3 @@
-<div class="col-sm-6 col-lg-4">
-  <h2 class="h4">On Text</h2>
-  <p>
-    <div class="bootstrap-switch-id-switch-onText bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-on" style="width: 101px;">
-    <div class="bootstrap-switch-container" style="width: 155px; margin-left: 0px;">
-    <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 56px;">color</span>
-    <span class="bootstrap-switch-label" style="width: 56px;">&nbsp;</span>
-    <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 56px;">OFF</span>
-    <input id="switch-onText" type="checkbox" checked="checked" data-on-text="Yes">
-    </div>
-    </div>
-  </p>
-  <div class="row">
-    <div class="col-sm-6">
-      <input type="text" data-switch-set-value="onText" value="Yes" class="form-control" data-com.agilebits.onepassword.user-edited="yes">
-    </div>
-  </div>
-</div>
+
+
+in tag: data-toggle="tooltip" data-placement="top" title="Tooltip on top"

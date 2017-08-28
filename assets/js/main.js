@@ -1,9 +1,12 @@
 $(function() {
+
+  $('[data-toggle="tooltip"]').tooltip()
+
   // filestack key
   var client = filestack.init('AHP1HMkJhTJWHb1boecTAz');
-
+  let currentColor;
   // upload image button
-  $('.uploadBtn').click(function(event) {
+  $('.uploadBtn').click((event) => {
     event.preventDefault()
     // clear previous image
     $('#newImage').empty()
@@ -27,8 +30,8 @@ $(function() {
         success: function(response) {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
           response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
-          console.log(color);
           $('#newImage').append(response).show()
+          $("pre").addClass(currentColor[1])
         }
       })
       // [{"filename":"Shahada_Deshiya.jpg","handle":"xq7jrczoRlmiqbYfA8bK","mimetype":"image/jpeg","originalPath":"http://ken.uno/images/Shahada_Deshiya.jpg","size":6131189,"source":"url","url":"https://cdn.filestackcontent.com/xq7jrczoRlmiqbYfA8bK"}]
@@ -36,29 +39,38 @@ $(function() {
   })
 
   // background-color class add/subtract
-  $('.dropdown-menu').click(function() {
+  $('.dropdown-menu').click(() => {
     currentColor = event.target.classList
-    console.log(currentColor[1])
     let bgBtn = $(".bgColorBtn")
-    console.log(bgBtn)
+    console.log(currentColor);
     bgBtn.removeClass("red orange yellow green blue indigo violet black white rainbow")
     bgBtn.addClass(currentColor[1])
     $("pre").removeClass("red orange yellow green blue indigo violet black white rainbow")
     $("pre").addClass(currentColor[1])
   })
 
-  // ascii color/bw switch
-  // $().button('toggle')
+  // ascii color/bw
+  // color
+  $('.monoMenu').hide()
 
+
+  $('.toggle').click(() => {
+    event.preventDefault()
+    if ($('.toggle').hasClass('off')) {
+      console.log('color')
+      // turn off mono menu; turn on color menu
+      $('.monoMenu').hide()
+      $('.colorMenu').show()
+
+    } else {
+      console.log('monochrome')
+      // turn off color menu; turn on mono menu
+      $('.colorMenu').hide()
+      $('.monoMenu').show()
+    }
+
+
+  })
 
 
 })
-
-
-
-
-
-// not working! want to remove picker logos
-$('div.fsp-modal').parent().removeClass("fsp-picker__footer fsp-picker__footer--visible")
-// $('.fsp-icon--filestack').remove()
-// $('fsp-picker__footer--').replace(/visible/g, 'hidden')
