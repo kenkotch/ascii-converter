@@ -52,9 +52,6 @@ $(function() {
 
 
 
-
-
-
 })
 
 
@@ -62,6 +59,6 @@ $(function() {
 
 
 // not working! want to remove picker logos
-// $('div.fsp-modal').parent().removeClass("fsp-picker__footer fsp-picker__footer--visible")
+$('div.fsp-modal').parent().removeClass("fsp-picker__footer fsp-picker__footer--visible")
 // $('.fsp-icon--filestack').remove()
 // $('fsp-picker__footer--').replace(/visible/g, 'hidden')

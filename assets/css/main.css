@@ -17,6 +17,11 @@ pre {
   text-align: center;
   max-height: 80vh;
   max-width: 60vw;
+  margin: auto;
+}
+
+ /*remove picker logo*/
+div.fsp-picker__footer.fsp-picker__footer--visible {
   display: none;
 }
 
