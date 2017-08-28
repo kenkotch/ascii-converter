@@ -87,3 +87,47 @@ background color dropdown colors
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff00ff', GradientType=1);
   /* ie6-9 */
 }
+
+
+/*
+=================================
+    monochrome font colors
+=================================
+*/
+
+.f-red {
+  color: red;
+  /*background-color: red;*/
+}
+
+.f-orange {
+  color: orange;
+}
+
+.f-yellow {
+  color: yellow;
+}
+
+.f-green {
+  color: green;
+}
+
+.f-blue {
+  color: blue;
+}
+
+.f-indigo {
+  color: indigo;
+}
+
+.f-violet {
+  color: violet;
+}
+
+.f-black {
+  color: black;
+}
+
+.f-white {
+  color: white;
+}
