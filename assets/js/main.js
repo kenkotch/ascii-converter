@@ -1,9 +1,12 @@
 $(function() {
 
   // filestack key
-  var client = filestack.init('AHP1HMkJhTJWHb1boecTAz');
-  let currentColor;
-  let monoMenuColor;
+  const client = filestack.init('AHP1HMkJhTJWHb1boecTAz')
+
+  const DEFAULT_COLOR = 'white'
+  let currentColor = DEFAULT_COLOR
+  const DEFAULT_FONT_COLOR = 'f-black'
+  let fontColorChoice = DEFAULT_FONT_COLOR
 
   // make ascii color text default
   let color = 'c:true'
@@ -34,9 +37,9 @@ $(function() {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
           response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
           $('#newImage').append(response).show()
-          $("pre").addClass(currentColor[1])
-          $("pre").addClass(fontColorChoice[1])
-          console.log('response', response)
+          console.log("I like colors, sometimes I picke them", currentColor, currentColor[1]);
+          $("pre").addClass(currentColor[1] || DEFAULT_COLOR)
+          $("pre").addClass(fontColorChoice[1] || DEFAULT_FONT_COLOR)
         }
       })
     })
@@ -46,12 +49,10 @@ $(function() {
   $('.bgColor').click(() => {
     currentColor = event.target.classList
     let bgBtn = $(".bgColorBtn")
-    console.log('currentColor', currentColor);
     bgBtn.removeClass("red orange yellow green blue indigo violet black white rainbow")
     bgBtn.addClass(currentColor[1])
     $("pre").removeClass("red orange yellow green blue indigo violet black white rainbow")
     $("pre").addClass(currentColor[1])
-    console.log(currentColor);
   })
 
   // font color dropdown menu
@@ -62,7 +63,6 @@ $(function() {
     monoMenuColor.addClass(fontColorChoice[1])
     $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
     $("pre").addClass(fontColorChoice[1])
-    console.log(monoMenuColor);
   })
 
 
@@ -84,22 +84,17 @@ $(function() {
       $('.colorMenu').hide()
       $('.monoMenu').show()
       color = 'c:false'
-      console.log('mono', color);
     }
   })
 
     // color mode: reversed or normal
     $('#reversed').click((event) => {
       reversed = 'r:true'
-      console.log(reversed)
     })
-
     $('#normal').click((event) => {
       reversed = 'r:false'
-      console.log(reversed)
     })
 
-
-
+    //tooltips
   $('[data-toggle="tooltip"]').tooltip()
 })
