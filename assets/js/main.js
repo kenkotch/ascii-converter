@@ -75,20 +75,12 @@ $(function() {
         // backgroundColor = event.target.classList
         monoMenuColor = $(".monoMenu")
         console.log('fontColorChoice', fontColorChoice)
-        console.log('monoMenuColor', monoMenuColor);
         monoMenuColor.removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
         monoMenuColor.addClass(fontColorChoice[1]) //.addClass(backgroundColor)
         $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
         $("pre").addClass(fontColorChoice[1])
 
       })
-
-
-
-
-
-
-
 
 
     }
