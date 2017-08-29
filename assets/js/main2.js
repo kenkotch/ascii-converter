@@ -1,13 +1,11 @@
 $(function() {
 
+  $('[data-toggle="tooltip"]').tooltip()
+
   // filestack key
   var client = filestack.init('AHP1HMkJhTJWHb1boecTAz');
   let currentColor;
   let monoMenuColor;
-
-  // make ascii color text default
-  let color = 'colored:true'
-
   // upload image button
   $('.uploadBtn').click((event) => {
     event.preventDefault()
@@ -25,81 +23,69 @@ $(function() {
 
       //url of uploaded image
       let myURL = result.filesUploaded[0].url
-      // let color = 'colored:false'
+      let color = 'colored:true,reverse:true'
       // make ascii art!
       $.ajax({
-        url: `https://process.filestackapi.com/AHP1HMkJhTJWHb1boecTAz/ascii=${color}/${myURL}`,
+        url: 'https://process.filestackapi.com/AHP1HMkJhTJWHb1boecTAz/ascii=' + color + '/' + myURL,
         type: "get",
         success: function(response) {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
           response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
           $('#newImage').append(response).show()
-          $("pre").addClass(currentColor)
-          $("pre").addClass(monoMenuColor)
-          console.log('response', response)
+          $("pre").addClass(currentColor[1])
         }
       })
+      // [{"filename":"Shahada_Deshiya.jpg","handle":"xq7jrczoRlmiqbYfA8bK","mimetype":"image/jpeg","originalPath":"http://ken.uno/images/Shahada_Deshiya.jpg","size":6131189,"source":"url","url":"https://cdn.filestackcontent.com/xq7jrczoRlmiqbYfA8bK"}]
     })
   })
 
-  // background color dropdown menu
+  // background-color class add/subtract
   $('.bgColor').click(() => {
     currentColor = event.target.classList
     let bgBtn = $(".bgColorBtn")
-    console.log('currentColor', currentColor);
+    console.log(currentColor);
     bgBtn.removeClass("red orange yellow green blue indigo violet black white rainbow")
     bgBtn.addClass(currentColor[1])
     $("pre").removeClass("red orange yellow green blue indigo violet black white rainbow")
     $("pre").addClass(currentColor[1])
-    console.log(currentColor);
   })
-
-  // font color dropdown menu
-  $('.fontColor').click(() => {
-    fontColorChoice = event.target.classList
-    monoMenuColor = $(".monoMenu")
-    monoMenuColor.removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
-    monoMenuColor.addClass(fontColorChoice[1])
-    $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
-    $("pre").addClass(fontColorChoice[1])
-    console.log(monoMenuColor);
-  })
-
 
   // ascii color/bw
 
-  // initally hide monoMenu
+  // initially hide monoMenu
   $('.monoMenu').hide()
 
-  $('.toggle').click(() => {
+  $('.fontColor').click(() => {
     event.preventDefault()
     if ($('.toggle').hasClass('off')) {
       // turn off mono menu; turn on color menu
       $('.monoMenu').hide()
       $('.colorMenu').show()
-      color = 'c:true'
-      console.log('color', color);
 
     } else {
+      console.log('monochrome')
       // turn off color menu; turn on mono menu
       $('.colorMenu').hide()
       $('.monoMenu').show()
-      color = 'c:false'
-      console.log('mono', color);
 
-      // $('.fontColor').click(() => {
-      //   fontColorChoice = event.target.classList
-      //   monoMenuColor = $(".monoMenu")
-      //   monoMenuColor.removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
-      //   monoMenuColor.addClass(fontColorChoice[1])
-      //   $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
-      //   $("pre").addClass(fontColorChoice[1])
-      // })
-
+      $('.fontColor').click(() => {
+        fontColorChoice = event.target.classList
+        // backgroundColor = event.target.classList
+        monoMenuColor = $(".monoMenu")
+        // console.log('fontColorChoice', fontColorChoice)
+        monoMenuColor.removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
+        monoMenuColor.addClass(fontColorChoice[1])
+        $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
+        $("pre").addClass(fontColorChoice[1])
+      })
 
     }
 
 
   })
-  $('[data-toggle="tooltip"]').tooltip()
+
+
+
+
+
 })

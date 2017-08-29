@@ -15,7 +15,7 @@ pre {
   font-family: Consolas, monaco, monospace;
   font-size: .7vw;
   text-align: center;
-  max-height: 80vh;
+  max-height: 70vh;
   max-width: 60vw;
   margin: auto;
 }
@@ -23,10 +23,6 @@ pre {
  /*remove picker logo*/
 div.fsp-picker__footer.fsp-picker__footer--visible {
   display: none;
-}
-
-.grayBack {
-  background-color: #cbcbcb;
 }
 
 
@@ -134,4 +130,8 @@ background color dropdown colors
 
 .f-white {
   color: white;
+}
+
+.grayBack {
+  background-color: #cbcbcb;
 }
