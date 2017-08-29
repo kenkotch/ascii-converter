@@ -6,7 +6,8 @@ $(function() {
   let monoMenuColor;
 
   // make ascii color text default
-  let color = 'colored:true'
+  let color = 'c:true'
+  let reversed = 'r:false'
 
   // upload image button
   $('.uploadBtn').click((event) => {
@@ -25,10 +26,9 @@ $(function() {
 
       //url of uploaded image
       let myURL = result.filesUploaded[0].url
-      // let color = 'colored:false'
       // make ascii art!
       $.ajax({
-        url: `https://process.filestackapi.com/AHP1HMkJhTJWHb1boecTAz/ascii=${color}/${myURL}`,
+        url: `https://process.filestackapi.com/AHP1HMkJhTJWHb1boecTAz/ascii=${color},${reversed}/${myURL}`,
         type: "get",
         success: function(response) {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
@@ -78,7 +78,21 @@ $(function() {
       $('.monoMenu').hide()
       $('.colorMenu').show()
       color = 'c:true'
-      console.log('color', color);
+      // console.log('color', color);
+
+      // color mode: reversed or normal
+      $('.colorMenu').click(() => {
+        event.preventDefault()
+        if ($('#reversed').hasClass('active')) {
+          reversed = 'r:true'
+          console.log(reversed)
+        } else if ($('#normal').hasClass('active')) {
+        reversed = 'r:false'
+          console.log(reversed)
+        }
+      })
+
+
 
     } else {
       // turn off color menu; turn on mono menu
@@ -86,18 +100,9 @@ $(function() {
       $('.monoMenu').show()
       color = 'c:false'
       console.log('mono', color);
-
-      // $('.fontColor').click(() => {
-      //   fontColorChoice = event.target.classList
-      //   monoMenuColor = $(".monoMenu")
-      //   monoMenuColor.removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
-      //   monoMenuColor.addClass(fontColorChoice[1])
-      //   $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
-      //   $("pre").addClass(fontColorChoice[1])
-      // })
-
-
     }
+
+
 
 
   })
