@@ -34,8 +34,8 @@ $(function() {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
           response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
           $('#newImage').append(response).show()
-          $("pre").addClass(currentColor)
-          $("pre").addClass(monoMenuColor)
+          $("pre").addClass(currentColor[1])
+          $("pre").addClass(fontColorChoice[1])
           console.log('response', response)
         }
       })
@@ -80,20 +80,6 @@ $(function() {
       color = 'c:true'
       // console.log('color', color);
 
-      // color mode: reversed or normal
-      $('.colorMenu').click(() => {
-        event.preventDefault()
-        if ($('#reversed').hasClass('active')) {
-          reversed = 'r:true'
-          console.log(reversed)
-        } else if ($('#normal').hasClass('active')) {
-        reversed = 'r:false'
-          console.log(reversed)
-        }
-      })
-
-
-
     } else {
       // turn off color menu; turn on mono menu
       $('.colorMenu').hide()
@@ -101,6 +87,22 @@ $(function() {
       color = 'c:false'
       console.log('mono', color);
     }
+
+
+    // color mode: reversed or normal
+    $('.colorMenu').click(() => {
+      event.preventDefault()
+      if ($('#reversed').hasClass('active')) {
+        reversed = 'r:true'
+        console.log(reversed)
+      } else if ($('#normal').hasClass('active')) {
+      reversed = 'r:false'
+        console.log(reversed)
+      }
+    })
+
+
+
 
 
 
