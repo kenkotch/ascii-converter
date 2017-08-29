@@ -78,7 +78,6 @@ $(function() {
       $('.monoMenu').hide()
       $('.colorMenu').show()
       color = 'c:true'
-      // console.log('color', color);
 
     } else {
       // turn off color menu; turn on mono menu
@@ -87,26 +86,20 @@ $(function() {
       color = 'c:false'
       console.log('mono', color);
     }
-
+  })
 
     // color mode: reversed or normal
-    $('.colorMenu').click(() => {
-      event.preventDefault()
-      if ($('#reversed').hasClass('active')) {
-        reversed = 'r:true'
-        console.log(reversed)
-      } else if ($('#normal').hasClass('active')) {
+    $('#reversed').click((event) => {
+      reversed = 'r:true'
+      console.log(reversed)
+    })
+
+    $('#normal').click((event) => {
       reversed = 'r:false'
-        console.log(reversed)
-      }
+      console.log(reversed)
     })
 
 
 
-
-
-
-
-  })
   $('[data-toggle="tooltip"]').tooltip()
 })

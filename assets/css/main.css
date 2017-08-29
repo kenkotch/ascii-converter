@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  margin: auto;
 }
 
 pre {
@@ -16,7 +17,7 @@ pre {
   font-size: .7vw;
   text-align: center;
   max-height: 70vh;
-  max-width: 60vw;
+  /*max-width: 60vw;*/
   margin: auto;
 }
 
