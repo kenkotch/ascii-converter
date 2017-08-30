@@ -73,21 +73,25 @@ background color dropdown colors
 }
 
 .rainbow {
-  background: -moz-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);
-  /* ff3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ff0000), color-stop(25%, #ffff00), color-stop(50%, #008000), color-stop(75%, #0000ff), color-stop(100%, #ff00ff));
-  /* safari4+,chrome */
-  background: -webkit-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);
-  /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);
-  /* opera 11.10+ */
-  background: -ms-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);
-  /* ie10+ */
-  background: linear-gradient(90deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);
-  /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff00ff', GradientType=1);
-  /* ie6-9 */
+  background-image: url("../img/rainbow.png");
+  background-size: 100%;
 }
+
+  /*background: -moz-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);*/
+  /* ff3.6+ */
+  /*background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ff0000), color-stop(25%, #ffff00), color-stop(50%, #008000), color-stop(75%, #0000ff), color-stop(100%, #ff00ff));*/
+  /* safari4+,chrome */
+  /*background: -webkit-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);*/
+  /* safari5.1+,chrome10+ */
+  /*background: -o-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);*/
+  /* opera 11.10+ */
+  /*background: -ms-linear-gradient(0deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);*/
+  /* ie10+ */
+  /*background: linear-gradient(90deg, #ff0000 0%, #ffff00 25%, #008000 50%, #0000ff 75%, #ff00ff 100%);*/
+  /* w3c */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff00ff', GradientType=1);*/
+  /* ie6-9 */
+/*}*/
 
 
 /*
