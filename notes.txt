@@ -1,3 +1,0 @@
-
-
-in tag: data-toggle="tooltip" data-placement="top" title="Tooltip on top"

@@ -37,7 +37,6 @@ $(function() {
           // remove html, head, body from returned html. remove pre styles, remove last 2 <br>
           response = response.slice(53, -14).replace(/ style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000"/, '').replace(/(<br>){2}/g, '')
           $('#newImage').append(response).show()
-          console.log("I like colors, sometimes I picke them", currentColor, currentColor[1]);
           $("pre").addClass(currentColor[1] || DEFAULT_COLOR)
           $("pre").addClass(fontColorChoice[1] || DEFAULT_FONT_COLOR)
         }
@@ -87,14 +86,39 @@ $(function() {
     }
   })
 
-    // color mode: reversed or normal
-    $('#reversed').click((event) => {
-      reversed = 'r:true'
-    })
-    $('#normal').click((event) => {
-      reversed = 'r:false'
-    })
+  // color mode: reversed or normal
+  $('#reversed').click((event) => {
+    reversed = 'r:true'
+  })
+  $('#normal').click((event) => {
+    reversed = 'r:false'
+  })
 
-    //tooltips
+
+
+
+  // save image as jpg
+
+  $('.saveBtn').click((event) => {
+    $('pre').attr('id', 'pre')
+    let pre = document.getElementById('pre')
+    pre = pre.innerHTML
+
+
+
+    html2canvas(document.getElementById('pre'),{
+      onrendered: function(canvas) {
+        var a = document.createElement('a');
+        a.href = canvas.toDataURL("image/jpeg", 1).replace("image/jpeg", "image/octet-stream");
+        a.download = 'asciiArt.jpg';
+        a.click();
+      }
+
+    })
+  })
+
+
+
+  //tooltips
   $('[data-toggle="tooltip"]').tooltip()
 })
