@@ -2,6 +2,7 @@ $(function() {
 
   // filestack key
   const client = filestack.init('AHP1HMkJhTJWHb1boecTAz')
+  // const client = filestack.init('ArAAhzleXSl2R9mqrKM21z')
 
   const DEFAULT_COLOR = 'white'
   let currentColor = DEFAULT_COLOR
@@ -64,7 +65,6 @@ $(function() {
     $("pre").addClass(fontColorChoice[1])
   })
 
-
   // ascii color/bw
 
   // initally hide monoMenu
@@ -94,26 +94,18 @@ $(function() {
     reversed = 'r:false'
   })
 
-
-
-
   // save image as jpg
-
   $('.saveBtn').click((event) => {
     $('pre').attr('id', 'pre')
     let pre = document.getElementById('pre')
     pre = pre.innerHTML
-
-
-
     html2canvas(document.getElementById('pre'),{
       onrendered: function(canvas) {
         var a = document.createElement('a');
-        a.href = canvas.toDataURL("image/jpeg", 1).replace("image/jpeg", "image/octet-stream");
-        a.download = 'asciiArt.jpg';
+        a.href = canvas.toDataURL("image/png", 1).replace("image/png", "image/octet-stream");
+        a.download = 'asciiArt.png';
         a.click();
       }
-
     })
   })
 
