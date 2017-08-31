@@ -11,7 +11,7 @@ $(function() {
 
   // make ascii color text default
   let color = 'c:true'
-  let reversed = 'r:false'
+  let reversed = 'r:true'
 
   // upload image button
   $('.uploadBtn').click((event) => {
@@ -114,7 +114,7 @@ $(function() {
 
   $('.btnCenter').click(() => {
     $('.btnCenter').hide()
-    $('.btnCenterTop').hide()
+    $('.txtCenter').hide()
     $('#menu-toggle').show()
   })
 
