@@ -118,21 +118,21 @@
         <!-- <a class="align-bottom" href="mailto:hello@ken.uno?subject=I love ascii Art!&body=Hi Ken, I want to give you one million dollars.">Contact Ken</a> -->
       </div>
 
-      <div style="height: 95vh;"></div>
+      <!-- this makes space for the following <a> to push to the bottom -->
+      <div class="vh95"></div>
 
-      <a class="align-bottom" style="height: 5vh; display: block;" href="mailto:hello@ken.uno?subject=I love ascii Art!&body=Hi Ken, I want to give you one million dollars.">Contact Ken</a>
+      <a class="align-bottom" href="mailto:hello@ken.uno?subject=I love ascii Art!&body=Hi Ken, I want to give you one million dollars.">Contact Ken</a>
     </nav>
 
     <!-- Page Content -->
-    <a href="#menu-toggle" class="btn" id="menu-toggle"><i class="fa fa-bars fa-2x"></i></a>
+    <a href="#menu-toggle" class="btn" id="menu-toggle"><i class="fa fa-bars fa-2x menu-toggle"></i></a>
   </div>
 
   <!-- wrapper end -->
 
   <!-- big button -->
-  <div class="container align-middle">
-    <button type="button" class="btn btn-danger btn-lg mx-auto d-block">Click Here Now!</button>
-  </div>
+    <h3 class="btnCenterTop">ASCII ART IS COOL</h3>
+    <button type="button" class="btn btn-danger btn-lg btnCenter menu-toggle">Click Here Now!</button>
 
   <!-- ASCII art -->
   <div class="container newImage" id="newImage">
@@ -140,7 +140,7 @@
 
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function(e) {
+    $(".menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });

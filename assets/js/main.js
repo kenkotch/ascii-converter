@@ -109,6 +109,14 @@ $(function() {
     })
   })
 
+  // big red button
+  $('#menu-toggle').hide()
+
+  $('.btnCenter').click(() => {
+    $('.btnCenter').hide()
+    $('.btnCenterTop').hide()
+    $('#menu-toggle').show()
+  })
 
 
   //tooltips
