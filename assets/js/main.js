@@ -40,6 +40,7 @@ $(function() {
           $('#newImage').append(response).show()
           $("pre").addClass(currentColor[1] || DEFAULT_COLOR)
           $("pre").addClass(fontColorChoice[1] || DEFAULT_FONT_COLOR)
+          $('.saveBtn').show()
         }
       })
     })
@@ -109,6 +110,9 @@ $(function() {
     })
   })
 
+    // hide save button
+    $('.saveBtn').hide()
+
   // big red button
   $('#menu-toggle').hide()
 
@@ -117,7 +121,6 @@ $(function() {
     $('.txtCenter').hide()
     $('#menu-toggle').show()
   })
-
 
   //tooltips
   $('[data-toggle="tooltip"]').tooltip()
