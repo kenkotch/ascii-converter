@@ -1,8 +1,8 @@
 $(function() {
 
   // filestack key
-  const client = filestack.init('AHP1HMkJhTJWHb1boecTAz')
-  // const client = filestack.init('ArAAhzleXSl2R9mqrKM21z')
+  // const client = filestack.init('AHP1HMkJhTJWHb1boecTAz')
+  const client = filestack.init('ArAAhzleXSl2R9mqrKM21z')
 
   const DEFAULT_COLOR = 'white'
   let currentColor = DEFAULT_COLOR
