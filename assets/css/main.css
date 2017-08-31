@@ -91,6 +91,10 @@ div.fsp-picker__footer.fsp-picker__footer--visible {
   margin-bottom: 4em;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /*
 =================================
 background color dropdown colors

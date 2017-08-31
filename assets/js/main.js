@@ -13,6 +13,9 @@ $(function() {
   let color = 'c:true'
   let reversed = 'r:true'
 
+  //default font-weight
+  let fWeight = 'bold'
+
   // upload image button
   $('.uploadBtn').click((event) => {
     event.preventDefault()
@@ -40,6 +43,7 @@ $(function() {
           $('#newImage').append(response).show()
           $("pre").addClass(currentColor[1] || DEFAULT_COLOR)
           $("pre").addClass(fontColorChoice[1] || DEFAULT_FONT_COLOR)
+          $('pre').addClass(fWeight)
           $('.saveBtn').show()
         }
       })
@@ -90,6 +94,17 @@ $(function() {
   })
   $('#normal').click((event) => {
     reversed = 'r:false'
+  })
+
+  // bold or regular font-weight
+  $('#bold').click((event) => {
+    $('pre').addClass('bold')
+    console.log($('pre'));
+    fWeight = 'bold'
+  })
+  $('#regular').click((event) => {
+    $('pre').removeClass('bold')
+    fWeight = ''
   })
 
   // save image as jpg
