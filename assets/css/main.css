@@ -57,6 +57,9 @@ pre {
   border-radius: 0.4rem;
 }
 
+.float-right {
+  margin-right: 2em;
+}
 
  /*remove picker logo*/
 div.fsp-picker__footer.fsp-picker__footer--visible {
