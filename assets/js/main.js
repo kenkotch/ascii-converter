@@ -66,11 +66,9 @@ $(function() {
     $("pre").addClass(fontColorChoice[1])
   })
 
-  // ascii color/bw
-
   // initally hide monoMenu
   $('.monoMenu').hide()
-
+  // ascii color/bw
   $('.toggle').click(() => {
     event.preventDefault()
     if ($('.toggle').hasClass('off')) {
@@ -78,7 +76,6 @@ $(function() {
       $('.monoMenu').hide()
       $('.colorMenu').show()
       color = 'c:true'
-
     } else {
       // turn off color menu; turn on mono menu
       $('.colorMenu').hide()

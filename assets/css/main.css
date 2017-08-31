@@ -67,7 +67,6 @@ pre {
 
 
 /*remove picker logo*/
-
 div.fsp-picker__footer.fsp-picker__footer--visible {
   display: none;
 }
@@ -78,6 +77,18 @@ div.fsp-picker__footer.fsp-picker__footer--visible {
   -ms-transform: scale(0.4, 0.4);
   -webkit-transform: scale(0.4, 0.4);
   display: inline-block;
+}
+
+.br {
+  margin-bottom: 1em;
+}
+
+.br2 {
+  margin-bottom: 2em;
+}
+
+.br4 {
+  margin-bottom: 4em;
 }
 
 /*
@@ -178,9 +189,13 @@ background color dropdown colors
 
 /*
 =================================
-    monochrome font colors
+    monochrome font options
 =================================
 */
+
+.f-bold {
+  font-weight: bold;
+}
 
 .f-red {
   color: red;

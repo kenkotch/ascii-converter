@@ -42,7 +42,7 @@
         <div class="sidebar-brand">
         </div>
         <!-- Dropdown for background color -->
-        <div>
+        <div class="br">
           <span class="dropdown">
             <button class="btn btn-secondary dropdown-toggle bgColorBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Background Color
@@ -61,27 +61,26 @@
             </div>
           </span>
         </div>
-        <br>
 
         <!-- b/w or color toggle-->
-        <input id="colorToggle" type="checkbox" checked data-toggle="toggle" data-on="Color" data-off="Mono" data-onstyle="primary" data-offstyle="secondary">
-        <br><br>
-
+        <div class="br">
+          <input id="colorToggle" type="checkbox" checked data-toggle="toggle" data-on="Color" data-off="Mono" data-onstyle="primary" data-offstyle="secondary">
+        </div>
         <!-- color tools -->
-        <div class="btn-group colorMenu" data-toggle="buttons">
+        <div class="btn-group colorMenu br" data-toggle="buttons">
           <label id="normal" class="btn btn-secondary">
             <input type="radio" name="options" id="option1" autocomplete="off" checked> normal
           </label>
           <label id="reversed" class="btn btn-secondary active" data-toggle="tooltip" data-placement="right" title="Reversed gives more contrast">
             <input type="radio" name="options" id="option2" autocomplete="off"> reversed
           </label>
-          <br>
         </div>
+
 
         <!-- monochrome tools -->
         <div>
-          <span class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle monoMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="dropdown br">
+            <button class="btn btn-secondary dropdown-toggle monoMenu br" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Font Color
             </button>
             <div class="dropdown-menu fontColor grayBack" aria-labelledby="dropdownMenuButton">
@@ -96,7 +95,17 @@
               <div class="dropdown-item f-white">White</div>
             </div>
           </span>
-          <br><br><br>
+        </div>
+
+
+        <!-- bold or regular -->
+        <div class="btn-group br4" data-toggle="buttons">
+          <label id="bold" class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" checked> bold
+          </label>
+          <label id="regular" class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> regular
+          </label>
         </div>
 
         <!-- uplod image -->
@@ -106,14 +115,12 @@
           </span>
         </div>
 
-        <br><br><br><br>
       </div>
 
       <!-- this makes space for the following <a> to push to the bottom -->
       <div class="vh90"></div>
-      <a href="asciihistory.html">ASCII History</a>
-      <br><br>
-      <a href="mailto:hello@ken.uno?subject=I love ascii Art!&body=Hi Ken, I want to give you one million dollars.">Contact Ken</a>
+      <div><a class="br2" href="asciihistory.html">ASCII History</a></div>
+      <a class="br2" href="mailto:hello@ken.uno?subject=I love ascii Art!&body=Hi Ken, I want to give you one million dollars.">Contact Ken</a>
     </nav>
 
     <!-- Page Content -->
