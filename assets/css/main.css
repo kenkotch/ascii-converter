@@ -242,14 +242,13 @@ background color dropdown colors
   background-color: #cbcbcb;
 }
 
-
 /*
 =================================
         media queries
 =================================
 */
 
-@media only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-device-width: 666px) {
   .btnCenter {
     position: absolute;
     top: 35%;
@@ -267,7 +266,8 @@ background color dropdown colors
     transform: translate(-55%, -50%);
     text-align: center;
   }
+
   .saveBtn {
-    display: none;
+    display: none !important;
   }
 }
