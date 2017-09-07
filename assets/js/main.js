@@ -52,21 +52,23 @@ $(function() {
 
   // background color dropdown menu
   $('.bgColor').click(() => {
+    const BASEBGCLASSES = "red orange yellow green blue indigo violet black white rainbow"
     currentColor = event.target.classList
     let bgBtn = $(".bgColorBtn")
-    bgBtn.removeClass("red orange yellow green blue indigo violet black white rainbow")
+    bgBtn.removeClass(BASEBGCLASSES)
     bgBtn.addClass(currentColor[1])
-    $("pre").removeClass("red orange yellow green blue indigo violet black white rainbow")
+    $("pre").removeClass(BASEBGCLASSES)
     $("pre").addClass(currentColor[1])
   })
 
   // font color dropdown menu
   $('.fontColor').click(() => {
+    const BASEFONTCLASSES = "f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white"
     fontColorChoice = event.target.classList
     monoMenuColor = $(".monoMenu")
-    monoMenuColor.removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
+    monoMenuColor.removeClass(BASEFONTCLASSES)
     monoMenuColor.addClass(fontColorChoice[1])
-    $("pre").removeClass("f-red f-orange f-yellow f-green f-blue f-indigo f-violet f-black f-white")
+    $("pre").removeClass(BASEFONTCLASSES)
     $("pre").addClass(fontColorChoice[1])
   })
 
