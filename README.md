@@ -4,3 +4,9 @@ Web app to convert photographs to ascii art. Allows users to customize look of a
 
 ©2018 Ken Kotch
 hello@ken.uno
+
+
+![alt text](https://github.com/kenkotch/ascii-converter/blob/master/assets/img/bunnycatScreenshot.jpg)
+
+
+![alt text](https://github.com/kenkotch/ascii-converter/blob/master/assets/img/ascii-bunnycat.jpg) ![alt text](https://github.com/kenkotch/ascii-converter/blob/master/assets/img/bunnycat.jpg)
